@@ -1,9 +1,6 @@
 # diary_of_science_work
 Дневник для научной работы.
 
-# diary_of_science_work
-Дневник для научной работы.
-
 ## Chapter 1. Hyperparameter Optimization
 
 В этой главе рассмотрены основные алгоритмы поиска гиперпараметров.
