@@ -61,7 +61,7 @@ Learning from Task Properties
 
 * Конфигурации для новой задачи можно выбирать с помощью рекомендаций. Задачи рассматриваются как пользователи, а конфигурации как товары. Проблема холодного старта решается следующей процедурой, предложенной в статье [**Feurer et al., 2015**](https://ml.informatik.uni-freiburg.de/papers/15-NIPS-auto-sklearn-preprint.pdf): для датасетов каждого из заданий подсчитываются метапризнаки, выбираются те их конфигурации, которые лучше всего себя показали. Затем для нового датасета выбираются самые близкие к нему задачи, с помощью например L1 метрики на векторах мета-признаков. Лучшие конфигурации самых близких датасетов используются для 'горячего' старта. Решение с помощью рекомендаций также подразумевает создание полезных эмбедингов как для задач так и для конфигураций.
 
-* В статье [**Learning based assistant for data pre-processing**](https://arxiv.org/pdf/1803.01024.pdf) предлагается способ автоматической рекомендации способа предобработки данных, а в [**Automated Image Data Preprocessing with Deep Reinforcement Learning**](https://arxiv.org/pdf/1806.05886v1.pdf) авторы предлагают метод для предобработки изображений.
+* В статье [**Learning based assistant for data pre-processing**](https://arxiv.org/pdf/1803.01024.pdf) предлагается способ автоматической рекомендации метода предобработки данных, а в [**Automated Image Data Preprocessing with Deep Reinforcement Learning**](https://arxiv.org/pdf/1806.05886v1.pdf) авторы предлагают метод для предобработки изображений.
 
 * В [**AlphaD3M: Machine Learning Pipeline Synthesis**](https://www.cs.columbia.edu/~idrori/AlphaD3M.pdf) применяется self-play RL для построения оптимальной конфигурации.
 
