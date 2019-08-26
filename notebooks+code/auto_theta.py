@@ -24,21 +24,15 @@ def envelope_gp_cnn_theta(sources, data, target, target_points_to_start, bounds,
          forget_upd=0.8, tao=1e-2, nu=1, gamma=None,\
                        lr_bandit_weights=None, strategy = 'exp3'):
     
-#    forget_theta_reward_coef = 0.3
+
     forget_theta_reward_coef = 0.8
     net_bias = 0
-#    forget_grid = 10.**np.arange(-4,3)
     forget_grid = 10.**np.arange(-2,2)
-    #forget_grid = (forget_grid[:, np.newaxis] * np.arange(1,10,3)[np.newaxis, :])
     policy_shape = forget_grid.shape
     forget_grid = forget_grid.ravel()
     net_dim = forget_grid.shape[0]
-#    net = nn.Sequential(nn.Linear(net_dim, 4*net_dim), nn.ReLU(),\
-#            nn.Linear(4*net_dim, 4*net_dim), nn.ReLU(), nn.Linear(4*net_dim, 2*net_dim),\
-#                       nn.ReLU(), nn.Linear(2*net_dim, net_dim), nn.Tanh())
     net = nn.Sequential(nn.Linear(net_dim,net_dim), nn.Tanh())
     net_const_ = torch.Tensor([1]*forget_grid.shape[0])[np.newaxis, np.newaxis, :]
-    #policy = torch.Tensor([1]*forget_grid.shape[0])
     net_h_ = None
     forget_= 0
     optimizer = torch.optim.Adam(net.parameters(), lr=0.5*1e-2)
@@ -90,7 +84,6 @@ def envelope_gp_cnn_theta(sources, data, target, target_points_to_start, bounds,
         
         #draw
         arm = algo.draw(probabilityDistribution)
-#        history += [arm]
         
         
         alpha=np.vstack((sigma_s[arm]*np.ones((data.shape[0],1)),\
@@ -106,14 +99,10 @@ def envelope_gp_cnn_theta(sources, data, target, target_points_to_start, bounds,
             y = target(target_data)
             gp.fit(target_data, y)
             gps = deepcopy(gp)
-            
-        
-#        policy_prev_= policy.detach()[np.newaxis, np.newaxis, :]
+           
         policy = nn.Softmax(0)(net(net_const_).reshape(-1)).reshape(-1)
-        #print(policy)
               
         m = Categorical(policy)
-#        forget_ = torch.Tensor.argmax(policy)
         forget_ = m.sample()
         log_policy = m.log_prob(forget_)
         forget_ = forget_grid[forget_.tolist()]
@@ -131,7 +120,6 @@ def envelope_gp_cnn_theta(sources, data, target, target_points_to_start, bounds,
                 min_val = res.fun
                 new_point = res.x
         
-        #new_point = search_grid[np.argmax(expected_improvement)]
         
         theReward = -loss(gps.predict(new_point[np.newaxis,:]),target(new_point))**2
         
@@ -156,8 +144,7 @@ def envelope_gp_cnn_theta(sources, data, target, target_points_to_start, bounds,
         tao += 0.5
         nu += ((target(new_point) - gps.predict(new_point[np.newaxis,:]))**2)/2
         sigma_s[arm] = nu/(tao + 1)
-        
-        #forget_ *= forget_upd
+      
         
     return  target_data, history, gp
 

@@ -80,7 +80,6 @@ def envelope_gp(sources, data, target, target_points_to_start, bounds, loss, sea
         
         #draw
         arm = draw(probabilityDistribution)
-#        history += [arm]
         
         
         alpha=np.vstack((sigma_s[arm]*np.ones((data.shape[0],1)),\
@@ -108,8 +107,6 @@ def envelope_gp(sources, data, target, target_points_to_start, bounds, loss, sea
                 min_val = res.fun
                 new_point = res.x
         
-        #new_point = search_grid[np.argmax(expected_improvement)]
-        
         theReward = -loss(gps.predict(new_point[np.newaxis,:]),target(new_point))**2
             
         
@@ -136,8 +133,6 @@ def SMBO_transfer(sources, data, target, target_points_to_start, bounds, search_
     
     target_data = target_points_to_start.copy() 
     t = target(target_points_to_start)
-#    target_data = np.append(np.zeros((target_data.shape[0], 1)),\
-#              target_data, axis=1) #добавим признак-индекс датасета, целевой == 0
 
     
     
@@ -163,7 +158,6 @@ def SMBO_transfer(sources, data, target, target_points_to_start, bounds, search_
         sigma_ = ((f - mu_)**2).sum()**0.5
         y += [(f - mu_)/sigma_]
         data_ = data.copy()
-#        data_ = np.append((i+1)*np.ones((data.shape[0], 1)), data, axis=1)
         data_ = np.append(source_marks[i+1,:][np.newaxis,:] + np.zeros((data.shape[0],1))\
                           , data, axis=1)
         X += [data_]
@@ -178,7 +172,6 @@ def SMBO_transfer(sources, data, target, target_points_to_start, bounds, search_
     for _ in tqdm_notebook(range(number_of_iterations), leave=False):
         
         t_norm = (t - mu)/sigma
-        #print(target_data.shape, target(target_data).shape)
         gp.fit(np.vstack((X, target_data)), np.hstack((y, t_norm)))
         
         expected_improvement = get_gp_ucb_simple_sklearn(search_grid_, gp, forget)
