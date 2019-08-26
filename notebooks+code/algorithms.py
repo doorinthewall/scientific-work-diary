@@ -67,7 +67,7 @@ def envelope_gp(sources, data, target, target_points_to_start, bounds, loss, sea
         
         
     #main
-    for _ in tqdm_notebook(range(number_of_iterations)):
+    for _ in tqdm_notebook(range(number_of_iterations), leave=False):
         
         #distribution update
         corrected_weights = log_weights - np.max(log_weights)
@@ -175,7 +175,7 @@ def SMBO_transfer(sources, data, target, target_points_to_start, bounds, search_
     
     dim = data.shape[1]
     
-    for _ in tqdm_notebook(range(number_of_iterations)):
+    for _ in tqdm_notebook(range(number_of_iterations), leave=False):
         
         t_norm = (t - mu)/sigma
         #print(target_data.shape, target(target_data).shape)

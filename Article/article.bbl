@@ -1,0 +1,79 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{rasmussen}
+\selectlanguageifdefined{english}
+\BibEmph{Rasmussen,~C.~E. and Williams, C. K. I.}, Gaussian Processes for Machine Learning. "---
+\newblock  MIT Press, 2006.
+
+\bibitem{tree_surrogate}
+\selectlanguageifdefined{english}
+\BibEmph{Hutter, F., Hoos, H., Leyton-Brown, K.}, Sequential model-based optimization for general algorithm configuration. "---
+\newblock   Springer, 2011.
+
+\bibitem{nn_surrogate}
+\selectlanguageifdefined{english}
+\BibEmph{Snoek, J., Rippel, O., Swersky, K., Kiros, R., Satish, N., Sundaram, N.,
+Patwary, M., Prabhat, Adams, R.}, Scalable Bayesian optimization using deep neural networks. "---
+\newblock Proceedings of the 32nd International Conference on Machine Learning (ICML15), vol. 37. pp. 2171--2180. Omnipress , 2015.
+
+\bibitem{expected_improvement}
+\selectlanguageifdefined{english}
+\BibEmph{Jones, D., Schonlau, M., Welch, W.}, Efficient global optimization of expensive black box functions. "---
+\newblock Journal of Global Optimization 13, 455-492, 1998.
+
+\bibitem{gp_ucb}
+\selectlanguageifdefined{english}
+\BibEmph{Srinivas N., Krause A., Kakade S. M. , Seeger M.}, Gaussian Process Optimization in the Bandit Setting: No Regret and Experimental Design. "---
+\newblock \BibEmph{arXiv preprint arXiv:0912.3995}, 2010.
+
+\bibitem{mab}
+\selectlanguageifdefined{english}
+\BibEmph{P. Auer, N. Cesa-Bianchi, Y. Freund, and R. E. Schapire}, The nonstochastic multiarmed bandit problem. "---
+\newblock SIAM J. Comput., 32(1):48-77, 2002
+
+\bibitem{exp3ix}
+\selectlanguageifdefined{english}
+\BibEmph{G. Neu}, Explore no more: Improved high-probability regret bounds for non-stochastic bandits. "---
+\newblock \BibEmph{arXiv preprint arXiv:1506.03271}, 2015.
+
+\bibitem{scot}
+\selectlanguageifdefined{english}
+\BibEmph{Dani Yogatama and Gideon Mann}, Efficient Transfer Learning Method for Automatic Hyperparameter Tuning. "---
+\newblock Proceedings of the Seventeenth International Conference on Artificial Intelligence and Statistics, vol. 33. pp. 1077--1085. PMLR , 2014.
+
+\bibitem{envgp}
+\selectlanguageifdefined{english}
+\BibEmph{Tinu Theckel Joy, Santu Rana, Sunil Gupta, Svetha Venkatesh}, A flexible transfer learning framework for Bayesian optimization with convergence guarantee. "---
+\newblock Expert Systems with Applications, vol. 115. pp. 656--672., 2018.
+
+\bibitem{rama}
+\selectlanguageifdefined{english}
+\BibEmph{Ramachandran, A., Gupta, S., Rana, S., Venkatesh, S.}, Selecting optimal source for transfer learning in Bayesian optimisation. "---
+\newblock Proceedings of PRICAI. pp. 42--56, 2018.
+
+\bibitem{bandits}
+\selectlanguageifdefined{english}
+The variance of Exp3. "---
+\newblock \href{https://banditalgs.com/2019/02/16/the-variance-of-exp3/}{{\bf https://banditalgs.com/2019/02/16/the-variance-of-exp3}}, 2019.
+
+
+\bibitem{rfce}
+\selectlanguageifdefined{english}
+\BibEmph{Ronald J. Williams.}, Simple statistical gradient-following algorithms for connectionist reinforcement
+learning. "---
+\newblock In Machine Learning, 1992.
+
+\bibitem{experiments}
+\selectlanguageifdefined{english}
+Code and experiments. "---
+\newblock \href{https://github.com/doorinthewall/diary_of_science_work}{{\bf https://github.com/doorinthewall/diary\_of\_science\_work}}, 2019.
+
+
+\end{thebibliography}
