@@ -1,7 +1,7 @@
 ### Research
 **Subject**: Automatic parameters selection for machine learning algorithms with reinforcement learning.		
 
-**Annotation**: Purpose of this work is [further](https://books.google.ru/books?id=McpmDwAAQBAJ&pg=PA42&lpg=PA42&dq=Ramachandran+Selecting+optimal+source+for+transfer+learning+in+Bayesian+optimisation.&source=bl&ots=xHhpuHu1Nq&sig=ynRb1s6aEE9YaKHSvVH3OfybL34&hl=en&sa=X&ved=2ahUKEwj00v27kPXeAhWPKCwKHQLSBsQQ6AEwBHoECAQQAQ#v=onepage&q=iteration&f=true) research on problem of number of iterations decrease of hyperparameters optimization procedure.
+**Annotation**: Purpose of this work is [further](https://books.google.ru/books?id=McpmDwAAQBAJ&pg=PA42&lpg=PA42&dq=Ramachandran+Selecting+optimal+source+for+transfer+learning+in+Bayesian+optimisation.&source=bl&ots=xHhpuHu1Nq&sig=ynRb1s6aEE9YaKHSvVH3OfybL34&hl=en&sa=X&ved=2ahUKEwj00v27kPXeAhWPKCwKHQLSBsQQ6AEwBHoECAQQAQ#v=onepage&q&f=true) research on problem of number of iterations decrease of hyperparameters optimization procedure.
 
 **Prorposed ideas**: Increase efficiensy of hyperparameters selection with transfer learning. Further speed up(in term of number of iterations) the aforementioned procedure actively choosing source of transfer with multiarmed bandits algorithm. Decrease variance in hyperparameters tuning procedure with [EXP3-IX](https://arxiv.org/pdf/1506.03271.pdf) algorithm. Fine tuning parameter of GP-UCB acquisition function with REINFORCE algorithm.     
 
